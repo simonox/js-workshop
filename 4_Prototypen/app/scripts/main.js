@@ -1,15 +1,3 @@
-
-/**
- * Funktion to add to objects (e.g. {Number})
- * @param a {Number} first parameter
- * @param b {Number} second paramter
- * @returns {Number} the sum of both parameters
- */
-function add(a, b) {
-    'use strict';
-    return a + b;
-}
-
 /**
  * The Constructor for a Task
  * @param subject {String} the subject of the task
@@ -30,12 +18,14 @@ function TaskList() {
      */
     this.elements = [];
     /**
-     * @param task {Task} Adds a Task object to the elements
+     * @param task {Task} Adds a Task Object to the elements of the TaskList
      */
+
     this.add = function(task) {
         this.elements.push(task);
         return this;
     }
+
     /**
      * Sorts the elements
      */
