@@ -41,3 +41,15 @@ function TaskList() {
         });
     }
 }
+
+/**
+ *
+ * @param subject {String} The subject of the reminder
+ * @param date {Date} The date when to remind
+ * @constructor
+ */
+function Reminder(subject, date){
+    Task.apply(this, arguments)
+    this.date = date;
+}
+Reminder.prototype = new Task();

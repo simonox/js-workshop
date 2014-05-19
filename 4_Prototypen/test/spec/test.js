@@ -37,6 +37,33 @@
                 myTaskList.sort();
                 assert(myTaskList.elements[0] === apple, 'task list is not sorted');
             })
-        })
+        });
+
+        describe('A Reminder', function(){
+            it('should be a Task', function() {
+                var now = new Date();
+                var myReminder = new Reminder('Remind Me', now);
+                assert(myReminder instanceof Task);
+            });
+            it('should be have a subject an a due date', function() {
+                var now = new Date();
+                var myReminder = new Reminder('Remind Me', now);
+                assert(myReminder.subject === 'Remind Me');
+                assert(myReminder.date === now);
+            });
+        });
+
+        describe('A mixed Task/Reminder list', function() {
+            it('should be able to handle Tasks and Reminders', function(){
+                var myTaskList = new TaskList();
+                var myTask = new Task('My Task');
+                var myReminder = new Reminder('My Reminder', new Date());
+                myTaskList.add(myTask).add(myReminder);
+                console.log(myTaskList);
+                assert(myTaskList.elements.pop() === myReminder);
+                assert(myTaskList.elements.pop() === myTask);
+            });
+        });
+
     });
 })();
