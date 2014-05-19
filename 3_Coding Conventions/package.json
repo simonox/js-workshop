@@ -26,7 +26,8 @@
     "jshint-stylish": "~0.1.5",
     "karma-chai": "^0.1.0",
     "load-grunt-tasks": "~0.4.0",
-    "time-grunt": "~0.3.1"
+    "time-grunt": "~0.3.1",
+    "grunt-jsdoc": "latest"
   },
   "engines": {
     "node": ">=0.10.0"

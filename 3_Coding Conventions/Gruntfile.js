@@ -9,12 +9,14 @@
 
 module.exports = function (grunt) {
 
+    // grunt.loadNpmTasks('grunt-jsdoc');
+
     // Load grunt tasks automatically
     require('load-grunt-tasks')(grunt);
 
+
     // Time how long tasks take. Can help when optimizing build times
     require('time-grunt')(grunt);
-
     // Configurable paths
     var config = {
         app: 'app',
@@ -63,6 +65,12 @@ module.exports = function (grunt) {
             }
         },
 
+        jsdoc : {
+            dist: {
+                src: ['app/{,*/}*.js','test/{,*/}*.js'],
+                dest: 'doc'
+            }
+        },
         // The actual grunt server settings
         connect: {
             options: {
@@ -373,4 +381,6 @@ module.exports = function (grunt) {
         'test',
         'build'
     ]);
+
+
 };
