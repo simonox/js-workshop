@@ -71,6 +71,14 @@ module.exports = function (grunt) {
                 dest: 'doc'
             }
         },
+
+        plato: {
+            reports: {
+                files: {
+                    'report': ['app/{,*/}*.js','test/{,*/}*.js']
+                }
+            }
+        },
         // The actual grunt server settings
         connect: {
             options: {
