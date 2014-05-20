@@ -1,4 +1,4 @@
-/* global describe:false, it:false, assert:false, task:false, taskList:false*/
+/* global describe:false, it:false, assert:false, task:false, taskList:false, reminder:false*/
 
 (function () {
     'use strict';
@@ -67,7 +67,7 @@
             it('should provide a changeable date on a Reminder object', function () {
                 var myReminder = Object.create(reminder);
                 var now = Date.now();
-                assert(myReminder.date, 'a date is defined')
+                assert(myReminder.date, 'a date is defined');
                 assert(myReminder.date !== now, 'but it is not now (hopefully)');
                 myReminder.date = now;
                 assert(myReminder.date === now);
