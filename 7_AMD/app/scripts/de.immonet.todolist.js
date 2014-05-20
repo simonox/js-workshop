@@ -1,20 +1,11 @@
+/* global define:false */
+
 'use strict';
-/**
- * @namespace
- */
-var de = de || {};
 
 /**
- * @namespace
+ * @module de.immonet.todolist
  */
-de.immonet = de.immonet || {};
-
-/**
- * @namespace
- */
-de.immonet.todolist = de.immonet.todolist || {};
-
-(function(todolist) {
+define(function() {
     /**
      * The Constructor for a Task
      * @param subject {String} the subject of the task
@@ -71,8 +62,10 @@ de.immonet.todolist = de.immonet.todolist || {};
         };
     }
     // Exports
+    var todolist = {};
     todolist.Task = Task;
     todolist.Reminder = Reminder;
     todolist.TaskList = TaskList;
-})(de.immonet.todolist);
+    return todolist;
+});
 

@@ -17,12 +17,12 @@
     var should = chai.should();
 </script>
 
-<!-- include source files here... -->
-<script src="scripts/de.immonet.todolist.js"></script>
-
-<!-- include spec files here... -->
-<script src="spec/de.immonet.totolist-spec.js"></script>
-
-<script>mocha.run()</script>
+<script src="bower_components/requirejs/require.js"></script>
+<script>
+    require(['../app/scripts/de.immonet.todolist.js', 'spec/de.immonet.todolist-spec.js'], function(a,b) {
+        // everything is loaded
+        mocha.run();
+    });
+</script>
 </body>
 </html>
