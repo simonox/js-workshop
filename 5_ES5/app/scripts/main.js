@@ -32,46 +32,47 @@ var reminder = Object.create(task, {
 
 /**
  * A TaskList
- * @type {Object}
+ * @namespace
+ * @extends {Object}
  */
 var taskList = Object.create({}, {
+    /**
+     * The Elements of a Task List
+     * @type: {Array}
+     * @memberOf taskList
+     */
     elements : {
         value: [], writable: true, configurable: false, enumerable: true
+    },
+    /**
+     * Adds a Task to the Elements of a Task List
+     * @type {Function}
+     * @memberOf taskList
+     * @param task {task}
+     */
+    add : {
+        value: function(task) {
+            this.elements.push(task);
+            return this;
+        }, writable: false, configurable: false, enumerable: false
+    },
+    /**
+     * Sorts the Elements of a Task List
+     * @type {Function}
+     * @memberOf taskList
+     */
+    sort : {
+        value: function() {
+            this.elements.sort(function(a, b) {
+                if (a.subject > b.subject) {
+                    return 1;
+                } else if (a.subject < b.subject) {
+                    return -1;
+                } else {
+                    return 0;
+                }
+            });
+        }, writable: false, configurable: false, enumerable: false
     }
 });
-
-/**
- * The Constructor for a TaskList
- * @constructor
- */
-function TaskList() {
-    /**
-     * The elements of the TaskList
-     * @type {Array}
-     */
-    this.elements = [];
-    /**
-     * @param task {Task} Adds a Task Object to the elements of the TaskList
-     */
-
-    this.add = function(task) {
-        this.elements.push(task);
-        return this;
-    };
-
-    /**
-     * Sorts the elements
-     */
-    this.sort = function() {
-        this.elements.sort(function(a, b) {
-            if (a.subject > b.subject) {
-                return 1;
-            } else if (a.subject < b.subject) {
-                return -1;
-            } else {
-                return 0;
-            }
-        });
-    };
-}
 
