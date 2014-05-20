@@ -59,7 +59,6 @@
                 var myTask = new Task('My Task');
                 var myReminder = new Reminder('My Reminder', new Date());
                 myTaskList.add(myTask).add(myReminder);
-                console.log(myTaskList);
                 assert(myTaskList.elements.pop() === myReminder);
                 assert(myTaskList.elements.pop() === myTask);
             });
