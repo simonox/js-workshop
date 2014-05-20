@@ -1,10 +1,14 @@
 'use strict';
 /**
  * A Task Object
+ * @namespace
+ * @extends Object
  */
 var task =  Object.create({}, {
     /**
-     * The subject {String} of a Task Object
+     * The subject of a Task Object
+     * @type {String}
+     * @memberOf task
      */
     subject :	{
         value: '', writable: true, configurable: false, enumerable: true
@@ -13,17 +17,23 @@ var task =  Object.create({}, {
 
 /**
  * A Reminder extends a Task
- * @type {task}
+ * @extends task
  */
 var reminder = Object.create(task, {
     /**
-     * The date {Date} of a Reminder Object
+     * The date of a Reminder Object
+     * @type {Date}
+     * @memberOf reminder
      */
     date: {
         value: Date.now(), writable: true, configurable: false, enumerable: true
     }
 });
 
+/**
+ * A TaskList
+ * @type {Object}
+ */
 var taskList = Object.create({}, {
     elements : {
         value: [], writable: true, configurable: false, enumerable: true
