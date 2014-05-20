@@ -31,6 +31,15 @@
                     assert(e === 'Illegal Argument Exception');
                 }
             });
+            it('should be possible to retrive properties subjects', function () {
+                var myTask = Object.create(taskObject);
+                myTask.subject = 'My Task';
+                var myKeys = [];
+                for (var i in myTask) {
+                    myKeys.push(i);
+                }
+                assert(myKeys.indexOf('subject') > -1);
+            });
         });
     });
 })();

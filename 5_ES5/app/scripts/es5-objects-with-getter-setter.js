@@ -23,5 +23,6 @@ Object.defineProperty(taskObject, 'subject', {
        } else {
            throw 'Illegal Argument Exception';
        }
-   }
+   },
+   enumerable: true
 });
