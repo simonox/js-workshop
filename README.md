@@ -8,7 +8,7 @@
 ## Tag 2
 * 2 h: ES5
 * 1 h: Patterns
-* 1 h: jQuery im Einsatz
 * 1 h: Module (CommonJS, AMD)
+* 1 h: jQuery im Einsatz
 * 1 h: F&A
 
