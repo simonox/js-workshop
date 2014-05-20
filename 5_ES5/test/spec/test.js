@@ -54,6 +54,42 @@
                 assert(myReminder.date === now);
             });
         });
+        describe ('A Reminder', function() {
+            it('should provide a subject on a Reminder object', function () {
+                var myReminder = Object.create(reminder);
+                assert(myReminder.subject === '');
+            });
+            it('should provide a changeable subject on a Reminder object', function () {
+                var myReminder = Object.create(reminder);
+                myReminder.subject = 'My Reminder';
+                assert(myReminder.subject === 'My Reminder');
+            });
+            it('should provide a changeable date on a Reminder object', function () {
+                var myReminder = Object.create(reminder);
+                var now = Date.now();
+                assert(myReminder.date, 'a date is defined')
+                assert(myReminder.date !== now, 'but it is not now (hopefully)');
+                myReminder.date = now;
+                assert(myReminder.date === now);
+            });
+        });
+        describe ('An ES5 Reminder', function() {
+            it('should be extensible', function () {
+                var myReminder = Object.create(reminder);
+                reminder.importance = 1;
+                assert(reminder.importance === 1);
+                assert(myReminder.importance === 1);
+
+                myReminder.importance = 2;
+                assert(myReminder.importance === 2);
+                assert(reminder.importance === 1);
+
+                delete myReminder.importance;
+                assert(myReminder.importance === 1);
+                assert(reminder.importance === 1);
+
+            });
+        });
         describe ('A TaskList', function(){
             it('should provide a taskList', function(){
                 var myTaskList = Object.create(taskList);
