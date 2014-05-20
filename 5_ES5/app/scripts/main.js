@@ -1,15 +1,24 @@
+'use strict';
 /**
- * The Constructor for a Task
- * @param subject {String} the subject of the task
- * @constructor
+ * A Task Object
  */
 var task =  Object.create({}, {
+    /**
+     * The subject {String} of a Task Object
+     */
     subject :	{
         value: '', writable: true, configurable: false, enumerable: true
     }
 });
 
+/**
+ * A Reminder extends a Task
+ * @type {task}
+ */
 var reminder = Object.create(task, {
+    /**
+     * The date {Date} of a Reminder Object
+     */
     date: {
         value: Date.now(), writable: true, configurable: false, enumerable: true
     }
@@ -38,7 +47,7 @@ function TaskList() {
     this.add = function(task) {
         this.elements.push(task);
         return this;
-    }
+    };
 
     /**
      * Sorts the elements
@@ -53,6 +62,6 @@ function TaskList() {
                 return 0;
             }
         });
-    }
+    };
 }
 

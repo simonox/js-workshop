@@ -15,7 +15,7 @@
             });
             it('should provide a changeable subject on a Task object', function () {
                 var myTask = Object.create(task);
-                myTask.subject = 'My Task'
+                myTask.subject = 'My Task';
                 assert(myTask.subject === 'My Task');
             });
         });
