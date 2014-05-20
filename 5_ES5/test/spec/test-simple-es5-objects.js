@@ -73,7 +73,7 @@
                 assert(myReminder.date === now);
             });
         });
-        describe ('An ES5 Reminder', function() {
+        describe ('An extensible Reminder', function() {
             it('should be extensible', function () {
                 var myReminder = Object.create(reminder);
                 reminder.importance = 1;

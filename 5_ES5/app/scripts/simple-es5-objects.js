@@ -8,7 +8,7 @@ var task =  Object.create({}, {
     /**
      * The subject of a Task Object
      * @type {String}
-     * @memberOf task
+     * @memberOf taskObject
      */
     subject :	{
         value: '', writable: true, configurable: false, enumerable: true
@@ -17,13 +17,13 @@ var task =  Object.create({}, {
 
 /**
  * A Reminder extends a Task
- * @extends task
+ * @extends taskObject
  */
 var reminder = Object.create(task, {
     /**
      * The date of a Reminder Object
      * @type {Date}
-     * @memberOf reminder
+     * @memberOf reminderObject
      */
     date: {
         value: Date.now(), writable: true, configurable: false, enumerable: true
@@ -39,7 +39,7 @@ var taskList = Object.create({}, {
     /**
      * The Elements of a Task List
      * @type: {Array}
-     * @memberOf taskList
+     * @memberOf taskListObject
      */
     elements : {
         value: [], writable: true, configurable: false, enumerable: true
@@ -47,8 +47,8 @@ var taskList = Object.create({}, {
     /**
      * Adds a Task to the Elements of a Task List
      * @type {Function}
-     * @memberOf taskList
-     * @param task {task}
+     * @memberOf taskListObject
+     * @param task {taskObject}
      */
     add : {
         value: function(task) {
@@ -59,7 +59,7 @@ var taskList = Object.create({}, {
     /**
      * Sorts the Elements of a Task List
      * @type {Function}
-     * @memberOf taskList
+     * @memberOf taskListObject
      */
     sort : {
         value: function() {
