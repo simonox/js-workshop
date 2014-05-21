@@ -100,7 +100,7 @@ define(function() {
     $.fn.listTodos = function (elements) {
         var theHTMLList = &#039;&#039;;
         elements.forEach (function (eachTask)  {
-            //Note the intermingling of HTML and JavaScript; it is tedious to follow:
+                //Note the intermingling of HTML and JavaScript; it is tedious to follow:
                 theHTMLList += &#039;&lt;tr&gt;&#039; +
                     &#039;&lt;td&gt;&#039; + &#039;&lt;input type=&quot;checkbox&quot; /&gt;&#039; + &#039;&lt;/td&gt;&#039; +
                     &#039;&lt;td&gt;&#039; + eachTask.subject + &#039;&lt;/td&gt;&#039; +

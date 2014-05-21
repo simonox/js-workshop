@@ -1,12 +1,11 @@
 /* global define:false */
 
-'use strict';
-
 /**
  * @module de.immonet.todolist
  */
-define( function() {
+define(function() {
 // define('de.immonet.todolist', [], function() {
+    'use strict';
 
     /**
      * The Constructor for a Task
