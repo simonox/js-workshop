@@ -5,7 +5,9 @@
 /**
  * @module de.immonet.todolist
  */
-define(function() {
+define( function() {
+// define('de.immonet.todolist', [], function() {
+
     /**
      * The Constructor for a Task
      * @param subject {String} the subject of the task

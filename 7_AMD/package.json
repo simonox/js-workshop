@@ -1,9 +1,8 @@
 {
-  "name": "2-project-setup",
+  "name": "7_AMD",
   "version": "0.0.0",
   "dependencies": {},
   "devDependencies": {
-    "chai": "^1.9.1",
     "grunt": "~0.4.1",
     "grunt-autoprefixer": "~0.7.2",
     "grunt-bower-install": "~1.4.0",
@@ -26,8 +25,6 @@
     "grunt-svgmin": "~0.4.0",
     "grunt-usemin": "~2.1.0",
     "jshint-stylish": "~0.1.5",
-    "karma-chai": "^0.1.0",
-    "karma-requirejs": "^0.2.1",
     "load-grunt-tasks": "~0.4.0",
     "requirejs": "^2.1.11",
     "time-grunt": "~0.3.1"
