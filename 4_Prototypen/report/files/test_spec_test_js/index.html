@@ -45,11 +45,11 @@
   <div class="row">
     <div class="col-md-6">
       <h2 class="header">Maintainability <a href="http://blogs.msdn.com/b/codeanalysis/archive/2007/11/20/maintainability-index-range-and-meaning.aspx"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="A value between 0 and 100 that represents the relative ease of maintaining the code. A high value means better maintainability." data-original-title="Maintainability Index"  data-container="body"></i></a></h2>
-      <p class="stat">91.48</p>
+      <p class="stat">77.33</p>
     </div>
     <div class="col-md-6">
       <h2 class="header">Lines of code <i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Source Lines of Code / Logical Lines of Code" data-original-title="SLOC/LSLOC" data-container="body"></i></h2>
-      <p class="stat">16</p>
+      <p class="stat">66</p>
     </div>
   </div>
   <div class="row historical">
@@ -63,11 +63,11 @@
   <div class="row">
     <div class="col-md-6">
       <h2 class="header">Difficulty  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="The difficulty measure is related to the difficulty of the program to write or understand." data-original-title="Difficulty" data-container="body"></i></a></h2>
-      <p class="stat">2.29</p>
+      <p class="stat">13.22</p>
     </div>
     <div class="col-md-6">
       <h2 class="header">Estimated Errors  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Halstead's delivered bugs is an estimate for the number of errors in the implementation." data-original-title="Delivered Bugs" data-container="body"></i></a></h2>
-      <p class="stat">0.06</p>
+      <p class="stat">0.54</p>
     </div>
   </div>
 </div>
@@ -90,22 +90,72 @@
 
 <div class="container">
   <div class="row">
-    <textarea id="file-source" class="col-md-12">/* global describe:false, it:false, assert:false, add:true */
+    <textarea id="file-source" class="col-md-12">/* global describe:false, it:false, assert:false, Task:false, TaskList:false */
 
 (function () {
     &#039;use strict&#039;;
 
-    describe(&#039;My awseome app&#039;, function () {
-        describe(&#039;should run a simple test&#039;, function () {
-            it(&#039;should not fails&#039;, function () {
-                assert(true, &#039;just a boolean check&#039;);
+    describe(&#039;My TaskList app&#039;, function () {
+        describe (&#039;A Task&#039;, function() {
+            it(&#039;should provide a Task object&#039;, function () {
+                var myTask = new Task(&#039;My important task&#039;);
+                assert(myTask instanceof Task, &#039;it is not a task&#039;);
+            });
+            it(&#039;should provide a subject on a Task object&#039;, function () {
+                var myTask = new Task(&#039;My important task&#039;);
+                assert(myTask.subject === &#039;My important task&#039;);
             });
         });
-        describe(&#039;should be able run some business logic&#039;, function () {
-           it(&#039;should add two numbers&#039;, function() {
-               assert(add(5,3) === 8, &#039;5 + 3 should be 8&#039;);
-           });
+
+        describe (&#039;A TaskList&#039;, function(){
+            it(&#039;should provide a TaskList Constructor&#039;, function(){
+                var myTaskList = new TaskList();
+                assert(myTaskList instanceof TaskList);
+            });
+            it(&#039;should be possible to add a Task to a TaskList&#039;, function(){
+                var myTaskList = new TaskList();
+                var myTask = new Task(&#039;My Task&#039;);
+                myTaskList.add(myTask);
+                assert(myTaskList.elements.pop() === myTask);
+            });
+            it(&#039;should be possible to sort the Elements of a TaskList&#039;, function(){
+                var myTaskList = new TaskList();
+                var banana = new Task(&#039;Banana&#039;);
+                var apple = new Task(&#039;Apple&#039;);
+                var raspberry = new Task(&#039;Raspberry&#039;);
+                myTaskList.add(banana).add(apple).add(raspberry);
+                assert(myTaskList.elements[0] === banana, &#039;can find a element&#039;);
+
+                myTaskList.sort();
+                assert(myTaskList.elements[0] === apple, &#039;task list is not sorted&#039;);
+            })
         });
+
+        describe(&#039;A Reminder&#039;, function(){
+            it(&#039;should be a Task&#039;, function() {
+                var now = new Date();
+                var myReminder = new Reminder(&#039;Remind Me&#039;, now);
+                assert(myReminder instanceof Task);
+            });
+            it(&#039;should be have a subject an a due date&#039;, function() {
+                var now = new Date();
+                var myReminder = new Reminder(&#039;Remind Me&#039;, now);
+                assert(myReminder.subject === &#039;Remind Me&#039;);
+                assert(myReminder.date === now);
+            });
+        });
+
+        describe(&#039;A mixed Task/Reminder list&#039;, function() {
+            it(&#039;should be able to handle Tasks and Reminders&#039;, function(){
+                var myTaskList = new TaskList();
+                var myTask = new Task(&#039;My Task&#039;);
+                var myReminder = new Reminder(&#039;My Reminder&#039;, new Date());
+                myTaskList.add(myTask).add(myReminder);
+                assert(myTaskList.elements.pop() === myReminder);
+                assert(myTaskList.elements.pop() === myTask);
+            });
+        });
+
     });
 })();</textarea>
   </div>
