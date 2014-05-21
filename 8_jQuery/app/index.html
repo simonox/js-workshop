@@ -33,13 +33,30 @@
             </div>
 
             <div class="jumbotron">
-                <h1 id="task">'My Todolist</h1>
+                <h1 id="header">'My Task List App</h1>
                 <p><a class="btn btn-lg btn-success" href="#">Done! <span class="glyphicon glyphicon-ok"></span></a></p>
             </div>
 
+            <div class="panel panel-default">
+                <!-- Default panel contents -->
+                <div class="panel-heading">TaskList</div>
+                    <table id="taskTable"  class="table">
+                        <thead>
+                            <tr>
+                                <th><span class="glyphicon glyphicon-ok"></span></th>
+                                <th>Subject</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->
         <script src="../bower_components/jquery/dist/jquery.js"></script>
+        <script src="../bower_components/handlebars/handlebars.js"></script>
         <script src="../bower_components/requirejs/require.js"></script>
         <!-- endbower -->
         <!-- endbuild -->

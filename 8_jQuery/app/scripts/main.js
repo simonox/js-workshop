@@ -1,12 +1,12 @@
 /* global require:false, $:false */
-require(['scripts/de.immonet.todolist.js'], function(todolist) {
-    'use strict';
-    var myTask = new todolist.Task('My first ToDo Task');
-    $('#task').text(myTask.subject);
-});
-
-
 require(['scripts/jquery.colorize.js'], function(todolist) {
     'use strict';
-    $('#task').colorize();
+    $('#header').colorize();
+});
+
+require(['scripts/jquery.todolist.js', 'scripts/de.immonet.todolist.js'], function($plugin, model) {
+    'use strict';
+    var myTaskList = new model.TaskList();
+    myTaskList.add(new model.Task('Hello World')).add(new model.Task('Hello Again')).sort();
+    $('#taskTable').listTodos(myTaskList.elements);
 });
