@@ -7,6 +7,6 @@ require(['scripts/jquery.colorize.js'], function(todolist) {
 require(['scripts/jquery.todolist.js', 'scripts/de.immonet.todolist.js'], function($plugin, model) {
     'use strict';
     var myTaskList = new model.TaskList();
-    myTaskList.add(new model.Task('Hello World')).add(new model.Task('Hello Again')).sort();
+    myTaskList.add(new model.Task('Hello World')).add(new model.Task('Hello Again')).add(new model.Reminder('Remind Me', Date.now())).sort();
     $('#taskTable').listTodos(myTaskList.elements);
 });
