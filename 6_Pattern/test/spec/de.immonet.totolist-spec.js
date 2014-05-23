@@ -8,13 +8,14 @@
             Task = todolist.Task,
             Reminder = todolist.Reminder,
             TaskList = todolist.TaskList;
+
         describe ('A Task', function() {
             it('should provide a Task object', function () {
-                var myTask = new Task('My important task');
-                assert(myTask instanceof Task, 'it is not a task');
+                var myTask = new de.immonet.todolist.Task('My important task');
+                assert(myTask instanceof de.immonet.todolist.Task, 'it is not a task');
             });
             it('should provide a subject on a Task object', function () {
-                var myTask = new Task('My important task');
+                var myTask = new de.immonet.todolist.Task('My important task');
                 assert(myTask.subject === 'My important task');
             });
         });

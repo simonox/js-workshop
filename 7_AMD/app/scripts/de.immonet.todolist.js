@@ -6,7 +6,6 @@
  * @module de.immonet.todolist
  */
 define( function() {
-// define('de.immonet.todolist', [], function() {
 
     /**
      * The Constructor for a Task

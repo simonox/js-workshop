@@ -11,7 +11,7 @@
             });
             it('should provide a subject on a Task object', function () {
                 var myTask = new Task('My important task');
-                assert(myTask.subject === 'My important task');
+                assert(myTask.subject === 'My important task', 'cannot find subject');
             });
         });
 
@@ -44,7 +44,6 @@
                 var now = new Date();
                 var myReminder = new Reminder('Remind Me', now);
                 assert(myReminder instanceof Task);
-                assert(myReminder instanceof Reminder);
             });
             it('should be a Reminder', function() {
                 var now = new Date();
