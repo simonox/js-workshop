@@ -44,8 +44,14 @@
                 var now = new Date();
                 var myReminder = new Reminder('Remind Me', now);
                 assert(myReminder instanceof Task);
+                assert(myReminder instanceof Reminder);
             });
-            it('should be have a subject an a due date', function() {
+            it('should be a Reminder', function() {
+                var now = new Date();
+                var myReminder = new Reminder('Remind Me', now);
+                assert(myReminder instanceof Reminder);
+            });
+            it('should have a subject and a due date', function() {
                 var now = new Date();
                 var myReminder = new Reminder('Remind Me', now);
                 assert(myReminder.subject === 'Remind Me');
