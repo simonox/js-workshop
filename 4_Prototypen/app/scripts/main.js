@@ -17,10 +17,10 @@ function TaskList() {
      * @type {Array}
      */
     this.elements = [];
+
     /**
      * @param task {Task} Adds a Task Object to the elements of the TaskList
      */
-
     this.add = function(task) {
         this.elements.push(task);
         return this;
@@ -45,7 +45,7 @@ function TaskList() {
 /**
  *
  * @param subject {String} The subject of the reminder
- * @param date {Date} The date when to remind
+ * @param date {Date} The date when to reminder the user
  * @constructor
  */
 function Reminder(subject, date){
